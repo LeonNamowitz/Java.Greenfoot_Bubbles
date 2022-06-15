@@ -54,14 +54,20 @@ public class Bubble extends Actor
      */
     public void act() 
     {
+        if ((Bubble) getOneIntersectingObject(Bubble.class) != null)    {
+            turn(180);
+        }
+
         if (isAtEdge()) {
             turn(180);
         }
-        
+
         move(speed);
         
         if (Greenfoot.getRandomNumber(100) < 50) {
             turn(Greenfoot.getRandomNumber(5) - 2);   // -2 to 2
         }
+
+        
     }
 }
