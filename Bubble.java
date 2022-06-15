@@ -33,7 +33,7 @@ public class Bubble extends Actor
         int alpha = Greenfoot.getRandomNumber(190) + 60;
         
         img.setColor(new Color(red, green, blue, alpha));
-        img.fillOval(0, 0, size-1, size-1);
+        img.fillOval(0, 0, size, size);
         setImage(img);
         
         // random speed: 1 to 4
@@ -55,14 +55,14 @@ public class Bubble extends Actor
     public void act() 
     {
         if ((Bubble) getOneIntersectingObject(Bubble.class) != null)    {
-            turn(180);
+            turn(Greenfoot.getRandomNumber(180));
         }
 
         if (isAtEdge()) {
             turn(180);
         }
 
-        move(speed);
+        move(4);
         
         if (Greenfoot.getRandomNumber(100) < 50) {
             turn(Greenfoot.getRandomNumber(5) - 2);   // -2 to 2
